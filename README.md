@@ -234,6 +234,7 @@ git pull origin master 후 git push origin master
 git remote remove origin
 
 # 2. 정확한 주소로 재연결 (Styled- 저장소)
+# 참고: [https://github.com/codejeti/Styled-.git](https://github.com/codejeti/Styled-.git)
 git remote add origin [https://github.com/codejeti/Styled-.git](https://github.com/codejeti/Styled-.git)
 
 # 3. 원격의 최신 내용 가져오기 (히스토리 불일치 해결)
@@ -245,7 +246,7 @@ git push -u origin master
 
 Ⅳ. 리눅스 (Linux) 환경에서의 특이사항 및 조치
 
-리눅스 환경에서는 git push 시 개인 액세스 토큰(PAT)을 사용했음에도 인증 문제가 발생할 수 있습니다. 이는 주로 Git의 자격 증명 관리(Credential Management) 방식 때문에 발생합니다.
+사용자님께서 겪으신 리눅스 환경에서는 git push 시 개인 액세스 토큰(PAT)을 사용했음에도 인증 문제가 발생할 수 있습니다. 이는 주로 Git의 자격 증명 관리(Credential Management) 방식 때문에 발생합니다.
 
 1. 문제 발생 원인
 
