@@ -1,4 +1,4 @@
-Styled-Comp-Task: 프로젝트 통합 보고서 (README)
+
 
 본 문서는 React 기반 'Styled-Comp-Task' 프로젝트의 초기 환경 설정 오류 해결 과정, GitHub 저장소 업로드 및 인증 문제 해결 과정, 그리고 핵심 기술인 Tailwind CSS v3의 문법 구조를 최종적으로 정리하여 개발 및 유지보수를 돕기 위해 작성되었습니다.
 
@@ -52,69 +52,6 @@ src/index.css (최종)
 /* ... */
 
 
-Ⅱ. Tailwind CSS v3 vs v4 비교 및 핵심 문법 정리
-
-1. Tailwind CSS v3 vs v4 비교 (텍스트 요약)
-
-Tailwind CSS v3 (안정 버전)
-
-상태: 현재 프로젝트에 적용된 업계 표준 안정 버전입니다.
-
-설정 방식: PostCSS 플러그인을 통해 작동합니다.
-
-필수 의존성: tailwindcss, postcss, autoprefixer가 필수적으로 요구됩니다.
-
-CSS 불러오기: @tailwind base; @tailwind components; @tailwind utilities; 구문을 사용합니다.
-
-컴파일러: CSS Nano 등의 레거시 도구를 사용합니다.
-
-결론: 안정성 및 호환성이 최우선일 때 사용합니다.
-
-Tailwind CSS v4 (베타 버전)
-
-상태: 개발 및 테스트 중인 불안정 버전으로, 이전 충돌의 원인이었습니다.
-
-설정 방식: 통합 빌드 방식 (@tailwindcss/vite 등)으로 작동합니다.
-
-필요 의존성: 의존성이 간소화됩니다.
-
-CSS 불러오기: @import "tailwindcss"; 구문을 사용합니다.
-
-컴파일러: Lightning CSS라는 새로운 Rust 기반 컴파일러를 도입하여 속도가 매우 빠릅니다.
-
-결론: 최고의 성능과 단순화된 설정을 원하지만, 불안정성을 감수할 때 사용합니다.
-
-2. Tailwind CSS v3 핵심 문법 구조
-
-Tailwind CSS는 미리 정의된 유틸리티 클래스를 HTML/JSX 요소에 직접 적용하는 방식으로 작동합니다.
-
-기본 유틸리티 (Layout & Appearance)
-
-간격 (Spacing): p-4, m-2, px-6, py-3 등을 사용합니다. (Padding(p), Margin(m), x/y 축 간격 설정)
-
-색상 (Color): bg-blue-500, text-white, border-gray-300 등을 사용합니다. (배경색, 텍스트 색상. 50~900까지 밝기 단계)
-
-테두리: border, border-2, rounded-lg, shadow-xl 등을 사용합니다. (두께, 모서리 둥글기, 그림자 효과)
-
-레이아웃 및 정렬 (Flexbox & Grid)
-
-Flex 컨테이너: flex 클래스를 사용하여 display: flex; 역할을 합니다.
-
-아이템 정렬 (가로): justify-center는 justify-content: center; 역할을 합니다.
-
-격자 (Grid): grid, grid-cols-3 등을 사용하며, display: grid; 및 템플릿 열 설정을 합니다.
-
-반응형 디자인 (Responsive Design)
-
-모든 유틸리티 클래스 앞에 접두사를 붙여 특정 화면 크기(Breakpoint)에서만 해당 스타일이 적용되도록 합니다.
-
-(접두사 없음): 0px 이상 (모바일 우선). 예: w-full
-
-sm:: 640px 이상. 예: sm:w-1/2
-
-lg:: 1024px 이상. 예: lg:p-8
-
-Ⅲ. GitHub 코드 업로드 (Git) 최종 과정
 
 Git 인증 오류 및 브랜치 이름 문제를 해결하고 코드를 GitHub 저장소 (https://github.com/codejeti/Styled-.git)에 성공적으로 업로드했습니다. 
 
