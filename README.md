@@ -52,3 +52,28 @@ git pull origin master
 # 4. 최종 업로드 (기본 브랜치: master)
 git push -u origin master
 💡 참고: Rejected 오류가 다시 발생할 경우git push 명령 후에 rejected 오류가 발생했다면, Step 3의 3번 명령어를 다시 실행해야 합니다.git pull origin master : 원격 저장소의 최신 내용을 로컬로 가져와서 당신의 커밋과 합쳐주는 과정입니다. 이 과정이 없으면 Git은 충돌 방지를 위해 푸시를 거부합니다.충돌 발생 시: 만약 pull 시 CONFLICT 메시지가 뜬다면, 충돌 파일을 수동으로 해결하고 다시 git add . -> git commit -> git push를 진행해야 합니다.
+
+
+Ⅳ. 리눅스 (Linux) 환경에서의 특이사항 및 조치
+git push 시 개인 액세스 토큰(PAT)을 사용했음에도 인증 문제가 발생할 수 있습니다. 이는 주로 Git의 자격 증명 관리(Credential Management) 방식 때문에 발생
+
+1. 문제 발생 원인
+리눅스는 Windows나 macOS처럼 Git 자격 증명(ID/PAT)을 영구적으로 저장하는 기본 도구가 설정되어 있지 않을 수 있어, PAT를 입력해도 임시로만 기억하거나 오류가 반복될 수 있음
+
+2. 해결 조치
+
+1) PAT 캐싱 설정
+임시로 토큰을 기억하도록 설정.
+
+# PAT를 15분(900초) 동안 메모리에 캐시
+git config --global credential.helper 'cache --timeout 900'
+
+2) SSH 키 인증 (가장 안정적)
+PAT를 통한 HTTPS 인증이 계속 실패할 경우, SSH 키 인증으로 전환하는 것이 리눅스에서 가장 확실하고 안정적인 해결책
+
+# SSH 키 생성
+ssh-keygen -t ed25519 -C "your_email@example.com"
+
+# 키를 GitHub에 등록하고, Git 주소를 SSH 형식으로 변경해야 함
+# git remote set-url origin git@github.com:codejeti/Styled-.git
+
